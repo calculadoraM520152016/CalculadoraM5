@@ -31,67 +31,71 @@ public class Calculadora_m5 {
     /*Mètodes*/
     public void menu(){
         while(true){
-            entrada = reader.nextLine();    //Entrem el string amb la informació
+            opcions();    
+        }
+    }
 
-            if(entrada.indexOf("*")>0){
-                numeros = entrada.split("\\*");
-                numeric = esNumeric(numeros);
-                if (numeric == true){
-                    surtida = Multiplica.opera(numeros);
-                    System.out.println(surtida);
-                }else{
+    protected void opcions() throws NumberFormatException {
+        entrada = reader.nextLine();    //Entrem el string amb la informació
+        
+        if(entrada.indexOf("*")>0){
+            numeros = entrada.split("\\*");
+            numeric = esNumeric(numeros);
+            if (numeric == true){
+                surtida = Multiplica.opera(numeros);
+                System.out.println(surtida);
+            }else{
                 System.out.println("Error");
             }
-                
-            }else if(entrada.indexOf("/")>0){
-                numeros = entrada.split("\\/");
-                numeric = esNumeric(numeros);
-                if (numeric == true){
-                    if(Integer.parseInt(numeros[1]) == 0){ 
+            
+        }else if(entrada.indexOf("/")>0){
+            numeros = entrada.split("\\/");
+            numeric = esNumeric(numeros);
+            if (numeric == true){
+                if(Integer.parseInt(numeros[1]) == 0){ 
                     System.out.println("Error");
-                    }else {
-                        surtida = Divideix.opera(numeros);
-                        System.out.println(surtida);
-                    }
-                }else{
-                System.out.println("Error");
-                }
-                
-            }else if(entrada.indexOf("%")>0){
-                numeros = entrada.split("\\%");
-                numeric = esNumeric(numeros);
-                if (numeric == true){
-                    if(Integer.parseInt(numeros[1]) == 0){
-                    System.out.println("Error");
-                    }else {
-                        surtida = Modula.opera(numeros);
-                        System.out.println(surtida);
-                    }
-                }else{
-                System.out.println("Error");
-                }
-                
-            }else if(entrada.indexOf("+")>0){         //Comprovem si l'entrada conte un "+".
-                numeros = entrada.split("\\+");   //separem els numeros de la "+" i els guardem en una array.
-                numeric = esNumeric(numeros);
-                if (numeric == true){
-                    surtida=Suma.opera(numeros);          //Els sumem dins del mètode.
-                    System.out.println(surtida);    //Imprimim el resultat.
-                }else{
-                System.out.println("Error");
-                }
-            }else if(entrada.indexOf("-")>0){
-                numeros = entrada.split("\\-");
-                numeric = esNumeric(numeros);
-                if (numeric == true){
-                    surtida = Resta.opera(numeros);
+                }else {
+                    surtida = Divideix.opera(numeros);
                     System.out.println(surtida);
-                }else{
-                System.out.println("Error");
                 }
             }else{
                 System.out.println("Error");
             }
+            
+        }else if(entrada.indexOf("%")>0){
+            numeros = entrada.split("\\%");
+            numeric = esNumeric(numeros);
+            if (numeric == true){
+                if(Integer.parseInt(numeros[1]) == 0){
+                    System.out.println("Error");
+                }else {
+                    surtida = Modula.opera(numeros);
+                    System.out.println(surtida);
+                }
+            }else{
+                System.out.println("Error");
+            }
+            
+        }else if(entrada.indexOf("+")>0){         //Comprovem si l'entrada conte un "+".
+            numeros = entrada.split("\\+");   //separem els numeros de la "+" i els guardem en una array.
+            numeric = esNumeric(numeros);
+            if (numeric == true){
+                surtida=Suma.opera(numeros);          //Els sumem dins del mètode.
+                System.out.println(surtida);    //Imprimim el resultat.
+            }else{
+                System.out.println("Error");
+            }
+        }else if(entrada.indexOf("-")>0){
+            numeros = entrada.split("\\-");
+            numeric = esNumeric(numeros);
+            if (numeric == true){
+                surtida = Resta.opera(numeros);
+                System.out.println(surtida);
+            }else{
+                System.out.println("Error");
+            }
+        }else{
+            System.out.println("Error");
         }
     }
     /*Es numèric*/
