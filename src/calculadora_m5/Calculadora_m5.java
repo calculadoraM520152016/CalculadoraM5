@@ -4,7 +4,7 @@ package calculadora_m5;
 import java.util.Scanner;
 /**
  *
- * @author Jacob Bolea Moreno y los demas & co
+ * @author Jacob Bolea Moreno y los demas
  */
 public class Calculadora_m5 {
     /*Atributs*/
