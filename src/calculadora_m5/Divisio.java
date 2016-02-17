@@ -1,38 +1,38 @@
 
 package calculadora_m5;
-
+import static java.lang.Integer.parseInt;
 /**
  *
  * @author Jacob Bolea
  */
 public class Divisio {
     public int opera(String [] array){
-        boolean positiu1 = true;
-        boolean positiu2 = true;
-        int res = 0;
-        int num1 = Integer.parseInt(array[0]);
-        int num2 = Integer.parseInt(array[1]);
+        boolean signePositiu1 = true;
+        boolean signePositiu2 = true;
+        int resultat = 0;
+        int numero1 = parseInt(array[0]);
+        int numero2 = parseInt(array[1]);
         
-        if(num1<0){
-            num1 = num1*-1;
-            positiu1=false;
+        if(numero1<0){
+            numero1 = numero1*-1;
+            signePositiu1=false;
         }
-        if(num2<0){
-            num2 = num2*-1;
-            positiu2=false;
-        }
-        
-        while(num1>=num2){
-            num1 = num1-num2;
-            res++;
+        if(numero2<0){
+            numero2 = numero2*-1;
+            signePositiu2=false;
         }
         
-        if(!positiu1 && positiu2){
-            res = res*-1;
-        }else if(positiu1 && !positiu2){
-            res = res*-1;
+        while(numero1>=numero2){
+            numero1 = numero1-numero2;
+            resultat++;
         }
         
-        return res;
+        if(!signePositiu1 && signePositiu2){
+            resultat = resultat*-1;
+        }else if(signePositiu1 && !signePositiu2){
+            resultat = resultat*-1;
+        }
+        
+        return resultat;
     }
 }

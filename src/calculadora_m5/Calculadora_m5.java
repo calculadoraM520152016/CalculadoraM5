@@ -2,6 +2,8 @@
 package calculadora_m5;
 
 import java.util.Scanner;
+import static java.lang.System.in;
+import static java.lang.System.out;
 /**
  *
  * @author Jacob Bolea Moreno y los demas y co

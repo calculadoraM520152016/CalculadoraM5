@@ -1,6 +1,6 @@
 
 package calculadora_m5;
-
+import static java.lang.Integer.parseInt;
 /**
  *
  * @author Jacob Bolea
@@ -10,8 +10,8 @@ public class Multiplicacio {
         boolean signePositiu1 = true;
         boolean signePositiu2 = true;
         int resultat = 0;
-        int numero1 = Integer.parseInt(array[0]);
-        int numero2 = Integer.parseInt(array[1]);
+        int numero1 = parseInt(array[0]);
+        int numero2 = parseInt(array[1]);
         
         if(numero1<0){
             numero1 = numero1*-1;
