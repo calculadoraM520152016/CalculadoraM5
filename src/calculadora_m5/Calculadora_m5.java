@@ -1,9 +1,7 @@
 
 package calculadora_m5;
-
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
-import static java.lang.System.in;
-import static java.lang.System.out;
 /**
  *
  * @author Jacob Bolea Moreno y los demas y co
@@ -54,7 +52,7 @@ public class Calculadora_m5 {
             numeros = entrada.split("\\/");
             numeric = esNumeric(numeros);
             if (numeric == true){
-                if(Integer.parseInt(numeros[1]) == 0){ 
+                if(parseInt(numeros[1]) == 0){ 
                     System.out.println("Error");
                 }else {
                     surtida = Divideix.opera(numeros);
@@ -68,7 +66,7 @@ public class Calculadora_m5 {
             numeros = entrada.split("\\%");
             numeric = esNumeric(numeros);
             if (numeric == true){
-                if(Integer.parseInt(numeros[1]) == 0){
+                if(parseInt(numeros[1]) == 0){
                     System.out.println("Error");
                 }else {
                     surtida = Modula.opera(numeros);
@@ -103,8 +101,8 @@ public class Calculadora_m5 {
     /*Es numèric*/
     private static boolean esNumeric(String[] cadena){
                 try {
-                        Integer.parseInt(cadena[0]);
-                        Integer.parseInt(cadena[1]);
+                        parseInt(cadena[0]);
+                        parseInt(cadena[1]);
                         return true;
                 } catch (NumberFormatException e){
                         return false;
