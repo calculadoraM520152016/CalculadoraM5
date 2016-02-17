@@ -1,10 +1,11 @@
 
 package calculadora_m5;
 import static java.lang.Integer.parseInt;
+import static java.lang.System.out;
 import java.util.Scanner;
 /**
  *
- * @author Jacob Bolea Moreno y los demas y co
+ * @author grup1
  */
 public class Calculadora_m5 {
     /*Atributs*/
@@ -31,11 +32,11 @@ public class Calculadora_m5 {
     /*Mètodes*/
     public void menu(){
         while(true){
-            opcions();    
+            opera();    
         }
     }
 
-    protected void opcions() throws NumberFormatException {
+    protected void opera() throws NumberFormatException {
         entrada = reader.nextLine();    //Entrem el string amb la informació
         
         if(entrada.indexOf("*")>0){
@@ -43,9 +44,9 @@ public class Calculadora_m5 {
             numeric = esNumeric(numeros);
             if (numeric == true){
                 surtida = Multiplica.opera(numeros);
-                System.out.println(surtida);
+                out.println(surtida);
             }else{
-                System.out.println("Error");
+                out.println("Error");
             }
             
         }else if(entrada.indexOf("/")>0){
@@ -53,13 +54,13 @@ public class Calculadora_m5 {
             numeric = esNumeric(numeros);
             if (numeric == true){
                 if(parseInt(numeros[1]) == 0){ 
-                    System.out.println("Error");
+                    out.println("Error");
                 }else {
                     surtida = Divideix.opera(numeros);
-                    System.out.println(surtida);
+                    out.println(surtida);
                 }
             }else{
-                System.out.println("Error");
+                out.println("Error");
             }
             
         }else if(entrada.indexOf("%")>0){
@@ -67,13 +68,13 @@ public class Calculadora_m5 {
             numeric = esNumeric(numeros);
             if (numeric == true){
                 if(parseInt(numeros[1]) == 0){
-                    System.out.println("Error");
+                    out.println("Error");
                 }else {
                     surtida = Modula.opera(numeros);
-                    System.out.println(surtida);
+                    out.println(surtida);
                 }
             }else{
-                System.out.println("Error");
+                out.println("Error");
             }
             
         }else if(entrada.indexOf("+")>0){         //Comprovem si l'entrada conte un "+".
@@ -81,21 +82,21 @@ public class Calculadora_m5 {
             numeric = esNumeric(numeros);
             if (numeric == true){
                 surtida=Suma.opera(numeros);          //Els sumem dins del mètode.
-                System.out.println(surtida);    //Imprimim el resultat.
+                out.println(surtida);    //Imprimim el resultat.
             }else{
-                System.out.println("Error");
+                out.println("Error");
             }
         }else if(entrada.indexOf("-")>0){
             numeros = entrada.split("\\-");
             numeric = esNumeric(numeros);
             if (numeric == true){
                 surtida = Resta.opera(numeros);
-                System.out.println(surtida);
+                out.println(surtida);
             }else{
-                System.out.println("Error");
+                out.println("Error");
             }
         }else{
-            System.out.println("Error");
+            out.println("Error");
         }
     }
     /*Es numèric*/

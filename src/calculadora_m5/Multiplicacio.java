@@ -3,7 +3,7 @@ package calculadora_m5;
 import static java.lang.Integer.parseInt;
 /**
  *
- * @author Jacob Bolea
+ * @author grup1
  */
 public class Multiplicacio {
     public int opera(String [] array){
